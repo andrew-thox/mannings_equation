@@ -1,0 +1,35 @@
+Python implementation of Gauckler–Manning formula, used to estimate flow in an open channel.
+
+No warranty, do with as you please.
+
+To install run python setup.py install (may require sudo).
+
+To test run python test.py
+
+Arguments (in order):
+
+y,b,n,S,k=1.0,g=9.8066
+
+where:
+
+	y = Water depth measured normal (perpendicular) to the bottom of the culvert.
+	b = Channel bottom width.
+	n = Manning coefficient.  n is a function of the culvert material, such as plastic, concrete, brick, etc.
+		See http://www.engineeringtoolbox.com/mannings-roughness-d_799.html for a list of materials.
+	S = Slope of channel bottom or water surface.  Vertical distance divided by horizontal distance.
+	k = unit conversion factor = 1.49 if English units = 1.0 if metric units.
+	g = acceleration due to gravity = 32.174 ft/s2 = 9.8066 m/s2, defaults to 9.8066.
+
+
+Example usage:
+
+from mannings import ManningsEquation
+
+m=ManningsEquation(5,10,0.012,0.05,1.49, 32.174)
+
+m.cross_section
+m.wetted_perimeter
+m.hydraulic_radius
+m.average_velocity
+m.froude_number
+m.flowrate
