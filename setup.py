@@ -7,6 +7,6 @@ setup(name='Mannings',
       description='Python implementation of Gauckler–Manning formula, used to estimate flow in an open channel.',
       author='Andrew Kenyon',
       author_email='email@andrewkenyononline.net',
-      url='',
+      url='https://github.com/andrew-thox/mannings_equation',
       packages=['mannings'],
      )
